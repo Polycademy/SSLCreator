@@ -18,6 +18,13 @@ rm multidomain.csr
 
 That's difficult. So instead we use PHP, and we don't even need openssl. It works on Windows computers too!
 
+Installation
+------------
+
+```sh
+composer require polycademy/sslcreator:*
+```
+
 Usage
 -----
 
