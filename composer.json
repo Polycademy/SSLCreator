@@ -1,0 +1,26 @@
+{
+    "name": "polycademy/sslcreator",
+    "description": "Create Multi-Domain Self-Signed SSL Certificates",
+    "keywords": ["ssl"],
+    "homepage": "https://github.com/Polycademy/SSLCreator",
+    "license": "MIT",
+    "authors": [{
+        "name": "Roger Qiu",
+        "email": "roger.qiu@polycademy.com",
+        "homepage": "http://polycademy.com",
+        "role": "Founder and Developer"
+    }],
+    "require": {
+        "symfony/console": "~2.4.2",
+        "phpseclib/phpseclib": "~0.3.6"
+    },
+    "config": {
+        "bin-dir": "bin/"
+    },
+    "autoload": {
+        "psr-4": {
+            "SSLCreator\\": "src/"
+        }
+    },
+    "bin": ["sslcreator"]
+}

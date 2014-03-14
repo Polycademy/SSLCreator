@@ -1,0 +1,10 @@
+#!/usr/bin/env php
+<?php
+
+//phpinfo() is utilised by phpseclib
+error_reporting(E_ALL^ E_WARNING);
+
+require __DIR__ . '/vendor/autoload.php';
+
+$application = new \SSLCreator\GenerateApplication;
+$application->run();

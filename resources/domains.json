@@ -1,0 +1,5 @@
+[
+    "primarydomain.com",
+    "anotherdomain.com",
+    "*.wildcard.com"
+]
