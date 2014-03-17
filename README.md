@@ -46,8 +46,8 @@ Generating Certificate Signing Request
 Signing the Certificate
 Saving Key and Certificate at Current Working Directory
 Saved as:
-    - /SSLCreator/multidomain.key
-    - /SSLCreator/multidomain.crt
+    - ./multidomain.key
+    - ./multidomain.crt
 ```
 
 Need a lot of domains? Just point to a JSON file.
