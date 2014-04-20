@@ -4,7 +4,17 @@
 //phpinfo() is utilised by phpseclib
 error_reporting(E_ALL^ E_WARNING);
 
-require __DIR__ . '/vendor/autoload.php';
+set_time_limit(0);
+
+if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+    //during development
+    require_once(__DIR__ .'/vendor/autoload.php');
+} elseif (file_exists(__DIR__ . '/../../autoload.php')) {
+    //composer installed, we need to go up vendor/namespace/package/executable
+    require_once __DIR__ . '/../../autoload.php';
+} else {
+    throw new Exception('Composer\'s autoloader could not be located.');
+}
 
 $application = new \SSLCreator\GenerateApplication;
 $application->run();
