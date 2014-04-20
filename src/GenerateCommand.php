@@ -34,8 +34,7 @@ class GenerateCommand extends Command {
                 'domainsJson',
                 'j',
                 InputOption::VALUE_REQUIRED,
-                'Path to JSON file containing an array of domains for the certificate.',
-                realpath(__DIR__ . '/../resources/domains.json')
+                'Path to JSON file containing an array of domains for the certificate.'
             )
             ->addOption(
                 'bits',
