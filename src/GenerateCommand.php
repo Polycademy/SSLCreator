@@ -68,8 +68,8 @@ class GenerateCommand extends Command {
             }
         }
 
-        if (!empty($domains)) {
-            $output->writeLn('<error>No domains were passed in.</error>');
+        if (empty($domains)) {
+            $output->writeLn('<error>ERROR: No domains were passed in.</error>');
             return;
         }
 
