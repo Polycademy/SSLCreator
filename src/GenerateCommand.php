@@ -51,26 +51,27 @@ class GenerateCommand extends Command {
     protected function execute (InputInterface $input, OutputInterface $output) {
 
         $cwd = getcwd();
-
         $domains = $input->getArgument('domains');
-
         $filename = $input->getOption('filename');
-
         $domainsPath = $input->getOption('domainsJson');
-
         $bitsize = $input->getOption('bits');
 
-        if (empty($domains)) {
+        if (!is_array($domains)) {
+            $domains = array();
+        }
 
-            $output->writeLn('<info>No domains were passed in, therefore acquiring domains from JSON file</info>');
-
+        if (!empty($domainsPath)) {
             try {
-                $domains = $this->parse_json($domainsPath);
+                $domains = array_merge($domains, $this->parse_json($domainsPath));
             }catch (\Exception $e) {
-                $output->writeln('ERROR: ' . $e->getMessage());
+                $output->writeln('<error>ERROR: ' . $e->getMessage() . '</error>');
                 return;
             }
+        }
 
+        if (!empty($domains)) {
+            $output->writeLn('<error>No domains were passed in.</error>');
+            return;
         }
 
         $outputString = "<comment>Registering these domains</comment>:";

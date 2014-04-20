@@ -56,6 +56,16 @@ Need a lot of domains? Just point to a JSON file.
 sslcreator -j ./domains.json -f multidomain -b 1024
 ```
 
+The JSON file needs to be:
+
+```json
+[
+    "primarydomain.com",
+    "anotherdomain.com",
+    "*.wildcard.com"
+]
+```
+
 Help
 ----
 
