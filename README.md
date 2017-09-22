@@ -13,7 +13,7 @@ openssl genrsa -out multidomain.key 2048
 openssl req -new -key multidomain.key -out multidomain.csr
 echo "subjectAltName=DNS:first.com,DNS:*.second.com,DNS:another.io" > domain_extensions
 openssl x509 -req -in multidomain.csr -signkey multidomain.key -extfile domain_extensions -out multidomain.crt -days 10000
-rm multidomain.csr
+rm multidomain.csr domain_extensions
 ```
 
 That's difficult. So instead we use PHP, and we don't even need openssl. It works on Windows computers too!
