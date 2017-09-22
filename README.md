@@ -11,7 +11,7 @@ Normally you would have remember and do this of all on the command line:
 ```sh
 openssl genrsa -out multidomain.key 2048
 openssl req -new -key multidomain.key -out multidomain.csr
-echo "subjectAltName=DNS:first.com,DNS:*.second.com,DNS:another.io" > domain_extensions
+echo "subjectAltName=DNS:first.com,DNS:*.second.com,DNS:another.io,IP:10.0.0.0" > domain_extensions
 openssl x509 -req -in multidomain.csr -signkey multidomain.key -extfile domain_extensions -out multidomain.crt -days 10000
 rm multidomain.csr domain_extensions
 ```
